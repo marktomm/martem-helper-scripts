@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # inteded input file is gw/Gateway6/source/Core2/System/settingdescriptions.cpp
-# Transforms into mediawiki three column table format: argument, default value, description
+# Outputs mediawiki three column table format: argument, default value, description
 
 set -eo pipefail
 
