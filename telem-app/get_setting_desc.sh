@@ -15,7 +15,7 @@ main() {
                 sed 's/^[\t ]*//')      # remove any whitespace from start
             
             [[ ${line} =~ value\<[_\ a-zA-Z0-9:]*\>\(\) ]] && {
-                local argument=$(echo ${line%% *} | sed 's/^("\([-a-zA-Z.]*\).*$/\1/')
+                local argument=$(echo ${line%% *} | sed 's/^("\([-a-zA-Z0-9.]*\).*$/\1/')
                 local description=$(echo ${line##* \"} | sed 's/\(^[- \ta-zA-Z0-9*.,:;/\()!?_]*\)"[\t ]\?)[\t ]\?$/\1/')
                 local pseudo_default=$(echo ${line#*, } | sed 's/\(^value.*\)), .*$/\1/')
                 [[ ${pseudo_default} =~ default_value ]] && {
